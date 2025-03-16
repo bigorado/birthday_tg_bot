@@ -1,0 +1,15 @@
+[Unit]
+Description=Birthday Bot Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/birthday_tg_bot/
+ExecStart=/usr/bin/python3 /root/birthday_tg_bot/birthdays_bot.py
+ExecReload=/usr/bin/python3 /root/birthday_tg_bot/birthdays_bot.py
+Restart=always
+RestartSec=5
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
